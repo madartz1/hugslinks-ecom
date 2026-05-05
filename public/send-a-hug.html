@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Send a Hug | HUGS</title>
-  <meta name="description" content="Send a digital hug for $10. Pay once, then share care instantly through the HUGS community." />
+  <meta name="description" content="Send a digital hug for $10. Choose a card style, pay once, then share care instantly through the HUGS community." />
 
   <link rel="stylesheet" href="/styles.css" />
 
   <style>
     .hug-page{
-      max-width:900px;
+      max-width:1000px;
       margin:0 auto;
       padding:40px 24px;
       text-align:center;
@@ -36,7 +36,7 @@
     }
 
     .hug-card{
-      max-width:640px;
+      max-width:760px;
       margin:30px auto 0;
       background:var(--card);
       border:1px solid var(--border);
@@ -57,10 +57,17 @@
       font-size:17px;
     }
 
+    .flow{
+      color:var(--brand);
+      font-weight:800;
+      margin-top:4px;
+      text-shadow:0 0 8px var(--glow);
+    }
+
     .trust{
       margin-top:16px;
       width:100%;
-      max-width:420px;
+      max-width:460px;
       background:rgba(255,255,255,.05);
       border:1px solid var(--border);
       padding:18px;
@@ -73,17 +80,127 @@
       border-radius:14px;
     }
 
-    .flow{
-      color:var(--brand);
-      font-weight:800;
-      margin-top:4px;
-      text-shadow:0 0 8px var(--glow);
-    }
-
     .note{
       font-size:12px;
       color:var(--muted);
       margin-top:6px;
+    }
+
+    /* CARD SHOP STRIP */
+    .hugs-card-strip{
+      width:100%;
+      margin-top:22px;
+      text-align:left;
+    }
+
+    .strip-heading{
+      text-align:center;
+      margin-bottom:14px;
+    }
+
+    .strip-heading h2{
+      margin:0;
+      font-size:24px;
+      color:#fff;
+    }
+
+    .strip-heading p{
+      margin:8px 0 0;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .hug-scroll-window{
+      display:flex;
+      gap:16px;
+      overflow-x:auto;
+      padding:10px 6px 20px;
+      scroll-snap-type:x mandatory;
+      -webkit-overflow-scrolling:touch;
+    }
+
+    .hug-scroll-window::-webkit-scrollbar{
+      height:8px;
+    }
+
+    .hug-scroll-window::-webkit-scrollbar-thumb{
+      background:rgba(0,229,255,.35);
+      border-radius:999px;
+    }
+
+    .hug-product-card{
+      min-width:230px;
+      max-width:230px;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(0,229,255,.35);
+      border-radius:18px;
+      padding:14px;
+      scroll-snap-align:center;
+      box-shadow:0 0 18px rgba(0,229,255,.15);
+      transition:.25s ease;
+    }
+
+    .hug-product-card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 0 28px rgba(0,229,255,.35);
+    }
+
+    .hug-product-card img{
+      width:100%;
+      height:135px;
+      object-fit:cover;
+      border-radius:12px;
+      margin-bottom:10px;
+      background:rgba(255,255,255,.06);
+    }
+
+    .hug-product-card h3{
+      color:#00E5FF;
+      font-size:16px;
+      margin:6px 0;
+    }
+
+    .hug-product-card p{
+      font-size:12px;
+      color:var(--muted);
+      margin:0 0 12px;
+      line-height:1.4;
+    }
+
+    .hug-product-card a{
+      display:block;
+      text-align:center;
+      padding:11px 12px;
+      border-radius:999px;
+      background:#00E5FF;
+      color:#04111f;
+      font-weight:800;
+      text-decoration:none;
+      font-size:13px;
+      box-shadow:0 0 16px rgba(0,229,255,.35);
+    }
+
+    .hug-product-card a:hover{
+      filter:brightness(1.08);
+    }
+
+    @media(max-width:600px){
+      .hug-page{
+        padding:28px 16px;
+      }
+
+      .hug-card{
+        padding:22px 16px;
+      }
+
+      .hero h1{
+        font-size:34px;
+      }
+
+      .hug-product-card{
+        min-width:215px;
+        max-width:215px;
+      }
     }
   </style>
 </head>
@@ -120,8 +237,7 @@
     <h1>Send a Hug ❤️</h1>
 
     <p class="muted">
-      No forms. No pressure. Just a real moment of care.
-      Pay once — then share your Hug instantly.
+      Choose a digital hug card, pay once, then share a real moment of care instantly.
     </p>
   </section>
 
@@ -142,7 +258,7 @@
     </a>
 
     <div class="flow">
-      Tap → Pay → Share ❤️
+      Choose → Pay → Share ❤️
     </div>
 
     <div class="trust">
@@ -151,7 +267,55 @@
         Real people sharing real emotional support.
       </p>
 
-      <img src="/assets/hugs-pup.png" alt="Hug House Logo">
+      <img src="/assets/hugs-pup.png" alt="HUGS House Logo">
+    </div>
+
+    <div class="hugs-card-strip">
+
+      <div class="strip-heading">
+        <h2>Shop Digital Hug Cards</h2>
+        <p>Swipe to choose a card style.</p>
+      </div>
+
+      <div class="hug-scroll-window">
+
+        <div class="hug-product-card">
+          <img src="/assets/hug-card-nyc.jpg" alt="NYC Street Hug Card">
+          <h3>NYC Street Hug</h3>
+          <p>Urban energy, real care, and a bold HUGS street-style message.</p>
+          <a href="https://buy.stripe.com/dRm9ASa56deM7GvaIM8ww00" target="_blank" rel="noopener">
+            Create This Hug
+          </a>
+        </div>
+
+        <div class="hug-product-card">
+          <img src="/assets/hug-card-healing.jpg" alt="Healing Hug Card">
+          <h3>Healing Hug</h3>
+          <p>A soft support card for recovery, encouragement, and strength.</p>
+          <a href="https://buy.stripe.com/dRm9ASa56deM7GvaIM8ww00" target="_blank" rel="noopener">
+            Create This Hug
+          </a>
+        </div>
+
+        <div class="hug-product-card">
+          <img src="/assets/hug-card-love.jpg" alt="Love Hug Card">
+          <h3>Love Hug</h3>
+          <p>Send warmth, comfort, and connection to someone you love.</p>
+          <a href="https://buy.stripe.com/dRm9ASa56deM7GvaIM8ww00" target="_blank" rel="noopener">
+            Create This Hug
+          </a>
+        </div>
+
+        <div class="hug-product-card">
+          <img src="/assets/hug-card-birthday.jpg" alt="Birthday Hug Card">
+          <h3>Birthday Hug</h3>
+          <p>A joyful animated hug for birthdays, blessings, and celebration.</p>
+          <a href="https://buy.stripe.com/dRm9ASa56deM7GvaIM8ww00" target="_blank" rel="noopener">
+            Create This Hug
+          </a>
+        </div>
+
+      </div>
     </div>
 
     <div class="note">
@@ -166,6 +330,8 @@
 const heartsContainer = document.getElementById("blueHearts");
 
 function createHeart(){
+  if (!heartsContainer) return;
+
   const heart = document.createElement("div");
   heart.classList.add("blue-heart");
   heart.innerHTML = "❤";
@@ -173,7 +339,9 @@ function createHeart(){
   heart.style.fontSize = (10 + Math.random() * 18) + "px";
   heart.style.animationDuration = (10 + Math.random() * 12) + "s";
   heart.style.opacity = .4 + Math.random() * .4;
+
   heartsContainer.appendChild(heart);
+
   setTimeout(() => heart.remove(), 22000);
 }
 
